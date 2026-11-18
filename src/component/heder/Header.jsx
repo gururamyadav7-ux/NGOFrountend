@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
+import DeeyaLight from "../../../public/FilamentMoove.mp4"
 import {
     Menu,
     X,
@@ -50,8 +50,8 @@ const Header = () => {
         <div>
             <header
                 className={`fixed top-0  left-0 w-full z-50 transition-all duration-500 ${scrolled
-                    ? "bg-white/95 shadow-xl py-2"
-                    : "bg-white/80  py-4"
+                    ? "bg-white/95 shadow-xl py-1"
+                    : "bg-white/80 py-2"
                     } backdrop-blur-xl`}
             >
                 <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,8 +61,10 @@ const Header = () => {
                         {/* Logo */}
                         <a href="#home" className="flex items-center gap-2 shrink-0">
 
-                            <div className=" w-10 h-10">
-                                <img src={logo} className=" rounded-full" alt="" />
+                            <div className=" relative w-17 h-17">
+                                <video autoPlay video muted loop className="border cursor-pointer border-y-amber-400 
+                                    shadow-[0_0_15px_rgba(59,130,246,0.5)] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 absolute z-999 rounded-full" src={DeeyaLight}></video>
+                                <img src={logo} className="w-full h-full rounded-full" alt="" />
                             </div>
 
                             <span className="text-2xl font-black text-gray-900">

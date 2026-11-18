@@ -9,7 +9,6 @@ import {
     Users,
     Baby,
     ArrowUpRight,
-    HandHeart,
 } from "lucide-react";
 
 const Services = () => {
@@ -124,53 +123,6 @@ const Services = () => {
                             );
                         })}
                     </div>
-                </div>
-            </section>
-
-            {/* Impact Section */}
-            <section className="bg-green-50 py-20 px-6">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-
-                    <div>
-                        <span className="text-green-700 font-bold uppercase tracking-widest text-sm">
-                            Our Impact
-                        </span>
-
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
-                            Every Small Help Creates A Big Difference
-                        </h2>
-
-                        <p className="text-gray-600 leading-8 mb-8">
-                            Together, we can support families, educate children,
-                            improve healthcare and build a stronger society.
-                            Your contribution can change someone's life.
-                        </p>
-
-                        <button className="bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-xl font-bold transition flex items-center gap-3">
-                            <HandHeart size={21} />
-                            Support Our Work
-                        </button>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-5">
-                        {[
-                            ["10K+", "People Helped"],
-                            ["500+", "Children Educated"],
-                            ["100+", "Medical Camps"],
-                            ["50+", "Active Volunteers"],
-                        ].map(([number, title], index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-2xl p-7 shadow-sm text-center"
-                            >
-                                <h3 className="text-3xl md:text-4xl font-bold text-green-700">
-                                    {number}
-                                </h3>
-                                <p className="text-gray-500 mt-3 text-sm">{title}</p>
-                            </div>
-                        ))}
-                    </div>
-
                 </div>
             </section>
         </main>

@@ -39,34 +39,6 @@ const Donation = () => {
 
     return (
         <main className="bg-gray-50">
-
-            {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-950 via-green-800 to-emerald-700 py-24 px-6 overflow-hidden">
-
-                <div className="absolute w-80 h-80 bg-yellow-400/20 blur-3xl rounded-full -top-20 right-10" />
-
-                <div className="relative max-w-7xl mx-auto text-center">
-
-                    <span className="inline-flex items-center gap-2 bg-white/10 text-yellow-300 px-5 py-2 rounded-full text-sm">
-                        <Heart size={16} />
-                        Make A Difference
-                    </span>
-
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mt-7 mb-6">
-                        Your Donation Can
-                        <span className="block text-yellow-400 mt-2">
-                            Change A Life
-                        </span>
-                    </h1>
-
-                    <p className="text-green-100 max-w-2xl mx-auto text-lg leading-8">
-                        Your support helps us provide education, food,
-                        healthcare and hope to people in need.
-                    </p>
-
-                </div>
-            </section>
-
             {/* Donation Form */}
             <section className="py-20 px-6">
 
@@ -318,22 +290,6 @@ const Donation = () => {
 
                 </div>
             </section>
-
-            {/* Bottom CTA */}
-            <section className="bg-green-950 py-16 px-6 text-center">
-
-                <Heart className="text-yellow-400 mx-auto mb-5" size={40} />
-
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-                    Be Someone's Reason To Smile
-                </h2>
-
-                <p className="text-green-100 max-w-xl mx-auto">
-                    Together we can create hope, opportunity and a better future.
-                </p>
-
-            </section>
-
         </main>
     );
 };

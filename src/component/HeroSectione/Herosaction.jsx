@@ -9,7 +9,7 @@ import {
 
 const HeroSection = () => {
     return (
-        <section className="relative w-full bg-gradient-to-r from-green-950 to-emerald-700 py-24 px-6 overflow-hidden">
+        <section className="relative mb-10 h-[80vh] w-full bg-gradient-to-r from-green-950 to-emerald-700 px-6">
 
             {/* Background Image */}
             <img
@@ -24,10 +24,10 @@ const HeroSection = () => {
             {/* Hero Content */}
             <div className="relative z-10 flex min-h-[90vh] w-full items-center px-5 py-20 sm:px-8 lg:px-16">
 
-                <div className="max-w-3xl">
+                <div className="max-w-3xl relative">
 
                     {/* Heading */}
-                    <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                    <h1 className="text-2xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-4xl">
                         Small Actions,
                         <span className="block text-green-400">
                             Big Changes.
@@ -36,7 +36,7 @@ const HeroSection = () => {
                     </h1>
 
                     {/* Description */}
-                    <p className="mt-7 max-w-2xl text-base leading-8 text-gray-200 sm:text-lg">
+                    <p className="mt-7 max-w-2xl text-base leading-8 text-gray-200 sm:text-xl">
                         We work together to support underprivileged children,
                         empower communities, provide education and create a
                         brighter future for everyone.
@@ -62,42 +62,42 @@ const HeroSection = () => {
                         </a>
 
                     </div>
-
-                    {/* Statistics */}
-                    <div className="mt-16 grid max-w-2xl grid-cols-3 gap-5 border-t border-white/20 pt-8">
-
-                        <div>
-                            <Users className="mb-3 text-green-400" size={25} />
-                            <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                                5K+
-                            </h3>
-                            <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                                Lives Helped
-                            </p>
-                        </div>
-
-                        <div>
-                            <HandHeart className="mb-3 text-green-400" size={25} />
-                            <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                                120+
-                            </h3>
-                            <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                                Volunteers
-                            </p>
-                        </div>
-
-                        <div>
-                            <Globe className="mb-3 text-green-400" size={25} />
-                            <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                                25+
-                            </h3>
-                            <p className="mt-1 text-xs text-gray-300 sm:text-sm">
-                                Communities
-                            </p>
-                        </div>
-
-                    </div>
                 </div>
+            </div>
+
+            {/* Statistics */}
+            <div className="absolute top-[90%] w-screen rounded-2xl border-2 border-black px-5 bg-black/97 z-10 grid max-w-2xl grid-cols-3 gap-5 border-t pt-8">
+
+                <div >
+                    <Users className="mb-3 text-green-400" size={25} />
+                    <h3 className="text-2xl font-bold text-gray-100 sm:text-3xl">
+                        5K+
+                    </h3>
+                    <p className="mt-1 text-xs text-gray-100 sm:text-sm">
+                        Lives Helped
+                    </p>
+                </div>
+
+                <div>
+                    <HandHeart className="mb-3 text-green-400" size={25} />
+                    <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                        120+
+                    </h3>
+                    <p className="mt-1 text-xs text-gray-100 sm:text-sm">
+                        Volunteers
+                    </p>
+                </div>
+
+                <div>
+                    <Globe className="mb-3 text-green-400" size={25} />
+                    <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                        25+
+                    </h3>
+                    <p className="mt-1 text-xs text-gray-300 sm:text-sm">
+                        Communities
+                    </p>
+                </div>
+
             </div>
 
             {/* Bottom Decoration */}

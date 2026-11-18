@@ -1,24 +1,26 @@
 
 import {
-    Heart,
-    Users,
-    Target,
-    Eye,
-    HandHeart,
-    Award,
-    Globe,
     ArrowRight,
 } from "lucide-react";
 import { IoIosPeople } from "react-icons/io";
+import { GoHeartFill } from "react-icons/go";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaWineGlass } from "react-icons/fa6";
+// 
+import { BiSolidGraduation } from "react-icons/bi";
+import { MdHealthAndSafety } from "react-icons/md";
+import { PiPlantFill } from "react-icons/pi";
+import { FaHome } from "react-icons/fa";
+import { RiHandHeartFill } from "react-icons/ri";
 
 const About = () => {
     const achievements = [
-        { number: "Education support", title: "Lives Impacted", icon: Users },
-        { number: "Health Care", title: "Active Volunteers", icon: HandHeart },
-        { number: "Enviroment", title: "Projects Completed", icon: Award },
-        { number: "Social Welfare", title: "Communities Served", icon: Globe },
-        { number: "Shelter Support", title: "Communities Served", icon: Globe },
-        { number: "Humanitarian Aid", title: "Communities Served", icon: Globe },
+        { number: "Education support", title: "Lives Impacted", icon: <BiSolidGraduation className="text-black" size={35}/> },
+        { number: "Health Care", title: "Active Volunteers", icon: <MdHealthAndSafety className="text-green-500" size={35}/> },
+        { number: "Enviroment", title: "Projects Completed", icon: <PiPlantFill className="text-green-600" size={35}/> },
+        { number: "Social Welfare", title: "Communities Served", icon: <IoIosPeople className=" text-blue-500" size={35}/> },
+        { number: "Shelter Support", title: "Communities Served", icon: <FaHome className=" text-orange-800" size={34}/> },
+        { number: "Humanitarian Aid", title: "Communities Served", icon: <RiHandHeartFill className=" text-red-600" size={35}/> },
     ];
 
     return (
@@ -29,7 +31,7 @@ const About = () => {
 
                     <div className="relative">
                         <img
-                            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=900"
+                            src="https://static.vecteezy.com/system/resources/previews/041/760/876/large_2x/ngo-or-non-governmental-organization-illustration-to-serve-specific-social-and-political-needs-in-flat-cartoon-background-vector.jpg"
                             alt="NGO volunteers helping people"
                             className="rounded-3xl shadow-2xl w-full h-[420px] object-cover"
                         />
@@ -73,17 +75,14 @@ const About = () => {
             <section className="bg-green-50 w-full py-16 px-6">
                 <div className="w-[90%] mx-auto grid grid-cols-2 md:grid-cols-6 gap-4">
                     {achievements.map((item, index) => {
-                        const Icon = item.icon;
-
                         return (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl py-4 text-center shadow-sm hover:shadow-xl transition"
+                                className="bg-white rounded-2xl py-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition"
                             >
-                                <div className="bg-green-100 text-green-700 rounded-2xl flex items-center justify-center mb-4">
-                                    <Icon size={28} />
-                                </div>
-
+                                <i>
+                                    {item.icon}
+                                </i>
                                 <h3 className="text-[16px] font-bold text-green-800">
                                     {item.number}
                                 </h3>
@@ -94,94 +93,62 @@ const About = () => {
                     })}
                 </div>
             </section>
-            <div className=" w-[90%] grid grid-cols-5 rounded-2xl bg-blue-600 h-30">
-                <div className=" w-1/2 bg-amber-600 ">
-                    <h6>
+            <div className=" w-[90%] gradiant text-white flex rounded-2xl bg-blue-600 py-2">
+                <div className=" w-[30%]">
+                    <h6 className=" text-xl text-green-500 font-bold pl-5">
                         our effect
                     </h6>
-                    <p>
+                    <p className=" text-2xl text-white font-bold pl-5">
                         milakar jeevan badalenage
                     </p>
                 </div>
-                <div className=" bg-amber-400 gap-3 w-3/5 grid grid-cols-4 ">
-                    <div>
+                <div className=" w-[70%] gap-3 grid grid-cols-4 px-5">
+                    <div className=" border-l border-r border-white flex items-center flex-col justify-center">
                         <i>
-                            <IoIosPeople size={21} />
+                            <IoIosPeople size={35} className="text-green-500" />
                         </i>
-                        <span>
+                        <span className=" font-bold text-2xl">
                             10,000+
                         </span>
                         <span>
-                            benifite
+                            Benifite
                         </span>
                     </div>
-                    <div>
+                    <div className=" border-r border-white flex items-center flex-col justify-center">
                         <i>
-                            <IoIosPeople size={21} />
+                            <GoHeartFill size={30} className="text-green-500" />
                         </i>
-                        <span>
-                            10,000+
+                        <span className=" font-bold text-2xl">
+                            500+
                         </span>
                         <span>
-                            benifite
+                            Like
                         </span>
                     </div>
-                    <div>
+                    <div className=" border-r border-white flex items-center flex-col justify-center">
                         <i>
-                            <IoIosPeople size={21} />
+                            <FaLocationDot size={30} className="text-green-500" />
                         </i>
-                        <span>
-                            10,000+
+                        <span className=" font-bold text-2xl">
+                            50+
                         </span>
                         <span>
-                            benifite
+                            location distic
                         </span>
                     </div>
-                    <div>
+                    <div className="border-r border-white flex items-center flex-col justify-center">
                         <i>
-                            <IoIosPeople size={21} />
+                            <FaWineGlass size={32} className="text-green-500" />
                         </i>
-                        <span>
-                            10,000+
+                        <span className=" font-bold text-2xl">
+                            100%
                         </span>
                         <span>
-                            benifite
+                            result
                         </span>
                     </div>
                 </div>
             </div>
-
-            {/* Mission Vision */}
-            <section className="px-6">
-                <div className="max-w-7xl mx-auto text-center mb-14">
-                    <span className="text-green-700 font-bold uppercase tracking-widest text-sm">
-                        Our Purpose
-                    </span>
-                    <h2 className="text-4xl font-bold mt-3">
-                        Mission & Vision
-                    </h2>
-                </div>
-
-                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-                    <div className="p-10 bg-green-700 rounded-3xl text-white">
-                        <Target size={45} className="text-yellow-400 mb-6" />
-                        <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-                        <p className="text-green-100 leading-8">
-                            To empower underprivileged communities through education,
-                            healthcare, awareness and sustainable development.
-                        </p>
-                    </div>
-
-                    <div className="p-10 bg-gray-900 rounded-3xl text-white">
-                        <Eye size={45} className="text-yellow-400 mb-6" />
-                        <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
-                        <p className="text-gray-300 leading-8">
-                            To create a world where everyone has equal opportunities,
-                            dignity and access to a better quality of life.
-                        </p>
-                    </div>
-                </div>
-            </section>
         </main>
     );
 };
