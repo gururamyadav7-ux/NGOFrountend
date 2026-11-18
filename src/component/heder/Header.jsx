@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 import {
     Menu,
@@ -11,12 +12,13 @@ import {
     Search,
     Bell,
     ChevronDown,
-    LayoutDashboard,
     Settings,
     LogOut,
     Moon,
     Sun
 } from "lucide-react";
+
+import logo from "../../../public/logo.jpeg"
 
 const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -38,18 +40,18 @@ const Header = () => {
     }, []);
 
     const navLinks = [
-        { name: "Home", href: "#home", icon: Home },
-        { name: "About", href: "#about", icon: User },
-        { name: "Services", href: "#services", icon: Briefcase },
-        { name: "Contact", href: "#contact", icon: Phone },
+        { name: "Home", href: "/", icon: Home },
+        { name: "Aboute", href: "aboute", icon: User },
+        { name: "Services", href: "services", icon: Briefcase },
+        { name: "Donation", href: "donation", icon: Phone },
     ];
 
     return (
-        <div className={dark ? "dark" : ""}>
+        <div>
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-                        ? "bg-white/95 dark:bg-gray-950/95 shadow-xl py-2"
-                        : "bg-white/80 dark:bg-gray-950/80 py-4"
+                className={`fixed top-0  left-0 w-full z-50 transition-all duration-500 ${scrolled
+                    ? "bg-white/95 shadow-xl py-2"
+                    : "bg-white/80  py-4"
                     } backdrop-blur-xl`}
             >
                 <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,12 +61,12 @@ const Header = () => {
                         {/* Logo */}
                         <a href="#home" className="flex items-center gap-2 shrink-0">
 
-                            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
-                                <LayoutDashboard size={24} />
+                            <div className=" w-10 h-10">
+                                <img src={logo} className=" rounded-full" alt="" />
                             </div>
 
-                            <span className="text-2xl font-black text-gray-900 dark:text-white">
-                                NGO<span className="text-indigo-600">.</span>
+                            <span className="text-2xl font-black text-gray-900">
+                                SJKS<span className="text-indigo-600">.</span>
                             </span>
 
                         </a>
@@ -73,37 +75,40 @@ const Header = () => {
                         <div className="hidden lg:flex items-center gap-7">
 
                             {navLinks.map((item) => (
-                                <a
+                                <NavLink
                                     key={item.name}
-                                    href={item.href}
-                                    className="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 relative group"
+                                    to={item.href}
+                                    className="text-sm font-semibold text-black hover:text-black/10 dark:hover:text-black/50 transition-all duration-300 relative group"
                                 >
                                     {item.name}
 
-                                    <span className="absolute left-0 -bottom-2 w-0 h-0.5 bg-indigo-600 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                    <span className="absolute left-0 -bottom-2 w-0 h-0.5 bg-gray-950 group-hover:w-full transition-all duration-300"></span>
+                                </NavLink>
                             ))}
 
                             {/* Services Dropdown */}
                             <div className="relative">
                                 <button
                                     onClick={() => setServiceMenu(!serviceMenu)}
-                                    className="flex items-center gap-1 text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-indigo-600"
+                                    className="flex items-center dark:hover:text-black/50 gap-1 text-sm font-semibold hover:text-indigo-600"
                                 >
                                     More
                                     <ChevronDown size={16} />
                                 </button>
 
                                 {serviceMenu && (
-                                    <div className="absolute top-10 left-0 w-48 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-xl shadow-2xl p-2">
+                                    <div className="absolute top-10 -left-25 w-64 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-xl shadow-2xl p-2">
                                         <a href="#web" className="block p-3 rounded-lg hover:bg-indigo-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200">
-                                            Web Development
+                                            Campaigns
                                         </a>
                                         <a href="#design" className="block p-3 rounded-lg hover:bg-indigo-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200">
-                                            UI Design
+                                            Transparency & Reports
                                         </a>
                                         <a href="#marketing" className="block p-3 rounded-lg hover:bg-indigo-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200">
-                                            Marketing
+                                            Velunteer Opportunities
+                                        </a>
+                                        <a href="#marketing" className="block p-3 rounded-lg hover:bg-indigo-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200">
+                                            Gallery
                                         </a>
                                     </div>
                                 )}
@@ -142,7 +147,7 @@ const Header = () => {
 
                             {/* Notification */}
                             <button
-                                className="relative w-10 h-10 rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-800"
+                                className="relative w-10 h-10 rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-300 cursor-pointer bg-gray-800"
                                 aria-label="Notifications"
                             >
                                 <Bell size={20} />
@@ -154,7 +159,7 @@ const Header = () => {
 
                                 <button
                                     onClick={() => setProfileMenu(!profileMenu)}
-                                    className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
+                                    className="flex items-center gap-2 p-1.5 rounded-xl cursor-pointer"
                                 >
                                     <img
                                         src="https://i.pravatar.cc/100?img=12"
